@@ -32,6 +32,8 @@ public class RayPointer : MonoBehaviour {
     protected Transform triggerDown = null;
 
     public GameObject menu;
+	public GameObject menu1;
+	public GameObject menu2;
 
 
     /*void Awake () {
@@ -143,11 +145,13 @@ public class RayPointer : MonoBehaviour {
     }
 
 	void Update () {
-        if (menu.activeInHierarchy == true) {
+		if (menu.activeInHierarchy == true || menu1.activeInHierarchy == true || menu2.activeInHierarchy == true) {
             activeController = OVRInput.Controller.RTrackedRemote;
         } else {
             activeController = OVRInput.Controller.None;
         }
+
+
 
         DisableLineRendererIfNeeded ();
         Ray selectionRay = UpdateCastRayIfPossible();
